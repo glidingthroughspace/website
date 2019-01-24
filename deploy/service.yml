@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: gts-website
+  namespace: default
+spec:
+  selector:
+    app: gts-website
+  ports:
+  - name: http
+    port: 80

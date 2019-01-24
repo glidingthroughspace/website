@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gts-website
+  namespace: default
+  labels:
+    app: gts-website
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gts-website
+  template:
+    metadata:
+      labels:
+        app: gts-website
+    spec:
+      containers:
+      - name: gts-website
+        image: registry.default.svc.cluster.local/gts-website
+        ports:
+        - containerPort: 80
