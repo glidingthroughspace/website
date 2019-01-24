@@ -32,8 +32,8 @@
 		onresize = function(){
 			canvas.width = canvas.clientWidth;
 			canvas.height = canvas.clientHeight;
+			generateStars(canvas, context, 3, 250);
 		}
 		onresize();
-		generateStars(canvas, context, 3, 250);
 	};
 })();

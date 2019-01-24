@@ -1,6 +1,20 @@
 @import "reset";
 
 $space_blue: #010103;
+$link_color: #6d9eec;
+$link_hover_color: #4385ef;
+$font: 'Quicksand', sans-serif;
+
+$font-sizes: (
+  h1: 500%,
+	h2: 250%,
+);
+@each $elem, $size in $font-sizes {
+  #{$elem} {
+    font-size: #{$size};
+    margin: 10px 0;
+  }
+}
 
 html, body {
 	width: 100%;
@@ -16,11 +30,43 @@ html, body {
 }
 
 #content {
-	width: 100%;
+	font-family: $font;
+	
 	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	padding: 5vw 0;
+	box-sizing: border-box;
 	
 	#logo {
 		width: 20vw;
 		height: 20vw;
+	}
+
+	#text_content {
+		color: whitesmoke;
+		text-align: center;
+
+		h1 {
+			margin-bottom: 20px;
+		}
+
+		#links {
+			margin-top: 40px;
+		}
+	}
+
+	a {
+		color: $link_color;
+		text-decoration: underline;
+		text-decoration-color: $link_color;
+		
+		:hover {
+			color: $link_hover_color;
+			text-decoration: underline;
+			text-decoration-color: $link_hover_color;
+		}
 	}
 }
