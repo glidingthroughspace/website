@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: gts-website
-  namespace: default
+  namespace: gts
 spec:
   selector:
     app: gts-website

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gts-website
-  namespace: default
+  namespace: gts
   labels:
     app: gts-website
 spec:
@@ -17,6 +17,8 @@ spec:
     spec:
       containers:
       - name: gts-website
-        image: registry.default.svc.cluster.local/gts-website
+        image: registry.glidingthrough.space/gts-website:latest
         ports:
         - containerPort: 80
+      imagePullSecrets:
+      - name: regcred

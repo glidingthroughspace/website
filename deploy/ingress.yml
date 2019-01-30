@@ -2,11 +2,15 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: gts-website
-  namespace: default
+  namespace: gts
   annotations:
     kubernetes.io/ingress.class: "traefik"
     traefik.ingress.kubernetes.io/priority: 1
 spec:
-  backend:
-    serviceName: gts-website
-    servicePort: 80
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: gts-website
+          servicePort: 80
